@@ -21,7 +21,7 @@ export async function getImages(q, page, lodeMoreBtnRef, submit) {
 
     if (page > totalPages) {
         messages.onEnd();
-    } else if (response.data.hits.length == 0) {
+    } else if (response.data.hits.length == 0 || response.data.hits.length < 40) {
         messages.onFail();
         console.log(totalPages)
     } else {
